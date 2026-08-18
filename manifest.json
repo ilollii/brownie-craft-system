@@ -1,0 +1,26 @@
+{
+  "name": "Chunk & Cacao | تشانك & كاكاو",
+  "short_name": "Chunk & Cacao",
+  "description": "تطبيق طلب وتخصيص البراونيز البلجيكية الفاخرة بالرياض",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#faf6f0",
+  "theme_color": "#ea580c",
+  "orientation": "portrait",
+  "dir": "rtl",
+  "lang": "ar-SA",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

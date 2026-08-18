@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chunk & Cacao | تشانك & كاكاو - براوني بلجيكي فاخر بالرياض</title>
+  <meta name="description" content="Chunk & Cacao - التطبيق الرائد لصناعة وتخصيص البراونيز البلجيكية الفاخرة بالرياض، شوكولاتة مذابة وتوبينجز حصرية مع التوصيل الفوري.">
+  
+  <!-- PWA & Mobile App Meta Tags -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ea580c">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Chunk & Cacao">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="brand-logo">
+        <span class="logo-icon">🍫</span>
+        <div class="logo-text">
+          <h1>Chunk & Cacao</h1>
+          <span>تشانك & كاكاو</span>
+        </div>
+      </div>
+
+      <nav class="header-nav">
+        <a href="#home" class="nav-link active"><i class="fa-solid fa-house"></i> الرئيسية</a>
+        <a href="#menu" class="nav-link"><i class="fa-solid fa-cookie-bite"></i> قائمة البراوني</a>
+        <a href="javascript:void(0)" onclick="window.customizer.open()" class="nav-link"><i class="fa-solid fa-wand-magic-sparkles"></i> صمم براوني خاص</a>
+        <a href="#offers" class="nav-link"><i class="fa-solid fa-tags"></i> العروض والبوكسات</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- زر تبديل الصوت -->
+        <button id="soundToggleBtn" class="btn-icon" title="كتم / تفعيل الصوت">
+          <i class="fa-solid fa-volume-high"></i>
+        </button>
+
+        <!-- زر لوحة تحكم مالك المشروع (مخفي للزبائن ويظهر فقط عبر رابط المالك ?admin) -->
+        <button id="adminToggleBtn" class="btn-owner-switch" title="فتح لوحة إدارة المبيعات والمطبخ" style="display: none;">
+          <i class="fa-solid fa-store"></i>
+          <span>لوحة المالك</span>
+        </button>
+
+        <!-- زر السلة -->
+        <button id="cartToggleBtn" class="btn-icon" title="عرض سلة المشتريات">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span id="cartBadgeCount" class="cart-badge" style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= Hero Section ================= -->
+  <main id="home" class="hero-section">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-tag">
+          <i class="fa-solid fa-location-dot"></i> خبز طازج وتوصيل فوري حصرياً داخل مدينة الرياض 📍✨
+        </div>
+        <h1 class="hero-title">
+          اصنع براوني أحلامك <br>
+          <span class="highlight">بالصوصات والتوبينجز</span> المفضلة لديك!
+        </h1>
+        <p class="hero-subtitle">
+          عش تجربة حسية استثنائية من الشوكولاتة الذائبة في الرياض، اختر قاعدتك المفضلة، صب الكراميل والشوكولاتة البلجيكية، أضف مقرمشات البيكان والجيلاتو، واستلمها دافئة عند بابك.
+        </p>
+
+        <div class="hero-buttons">
+          <button class="btn-primary" onclick="window.customizer.open('base-fudge')">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> صمم براوني مخصص
+          </button>
+          <button id="heroMysteryBtn" class="btn-mystery" title="اقتراح توليفة عشوائية فاخرة من الشيف">
+            <i class="fa-solid fa-dice"></i> خلطة الشيف السري (أبهرني ✨)
+          </button>
+          <a href="#menu" class="btn-secondary">
+            <i class="fa-solid fa-utensils"></i> القائمة
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-card-glow">
+          <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800&auto=format&fit=crop&q=80" alt="براوني فاخر مذاب" class="hero-img" />
+          <div class="floating-badge">
+            <i class="fa-solid fa-fire-burner"></i>
+            <div>
+              <strong>طازج وساخن 50°C</strong>
+              <small>قوام فدجي غني يوصلك بأسرع وقت بالرياض</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= Features Bar ================= -->
+  <section class="features-strip">
+    <div class="features-grid">
+      <div class="feat-item">
+        <div class="feat-icon"><i class="fa-solid fa-truck-fast"></i></div>
+        <div>
+          <h4>توصيل سريع بأحياء الرياض</h4>
+          <p>توصيل دافئ بحافظات حرارية لجميع أحياء الرياض</p>
+        </div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon"><i class="fa-solid fa-gem"></i></div>
+        <div>
+          <h4>شوكولاتة بلجيكية 100%</h4>
+          <p>مكونات نقية وزبدة كاكاو طبيعية فاخرة</p>
+        </div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon"><i class="fa-solid fa-sliders"></i></div>
+        <div>
+          <h4>تخصيص كامل ومباشر</h4>
+          <p>تحكم بالصوصات، الحلاوة، والتوبينجز</p>
+        </div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+        <div>
+          <h4>خيارات كيتو وخالية جلوتين</h4>
+          <p>خيارات صحية غنية بالبروتين وبدون سكر</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Menu Section ================= -->
+  <section id="menu" class="menu-section">
+    <div class="section-header">
+      <span class="section-tag">قائمة التوقيع الحصرية</span>
+      <h2 class="section-title">اختر قاعدتك الفاخرة للبدء</h2>
+      
+      <!-- Filter Tabs -->
+      <div class="filter-bar">
+        <button class="filter-tab active" data-filter="all" onclick="window.app.setFilter('all')">
+          <i class="fa-solid fa-border-all"></i> جميع الأنواع
+        </button>
+        <button class="filter-tab" data-filter="fudge" onclick="window.app.setFilter('fudge')">
+          <i class="fa-solid fa-fire"></i> الأكثر مبيعاً (كلاسيك فدج)
+        </button>
+        <button class="filter-tab" data-filter="gourmet" onclick="window.app.setFilter('gourmet')">
+          <i class="fa-solid fa-crown"></i> توقيع الشيف (كراميل وبيكان)
+        </button>
+        <button class="filter-tab" data-filter="dark" onclick="window.app.setFilter('dark')">
+          <i class="fa-solid fa-cookie"></i> دارك تشوكليت 70%
+        </button>
+      </div>
+    </div>
+
+    <!-- Brownie Cards Grid -->
+    <div id="brownieMenuGrid" class="menu-grid">
+      <!-- يتم حقن بطاقات البراوني برمجياً عبر app.js -->
+    </div>
+  </section>
+
+  <!-- ================= Warm Dip Jars Section ================= -->
+  <section id="dips" class="menu-section" style="margin-top: -2rem;">
+    <div class="section-header">
+      <span class="section-tag">للتغميس والغرق بالشوكولاتة</span>
+      <h2 class="section-title">عبوات صوصات التغميس الدافئة (60 مل) 🫙</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem;">أضف عبوة صوص دافئة جانبية لغمس وتغميس قطع البراوني</p>
+    </div>
+
+    <!-- Dip Jars Grid -->
+    <div id="dipsMenuGrid" class="dips-grid">
+      <!-- حقن بطاقات الصوصات برمجياً عبر app.js -->
+    </div>
+  </section>
+
+  <!-- ================= Verified Customer Reviews Section ================= -->
+  <section id="reviews" class="menu-section" style="margin-top: -1rem;">
+    <div class="section-header">
+      <span class="section-tag">تجارب حقيقية من مجتمع الرياض</span>
+      <h2 class="section-title">آراء وتقييمات عملائنا ⭐</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem;">أكثر من +2,500 عميل في أحياء الرياض يشاركوننا لحظات السعادة مع Chunk & Cacao</p>
+    </div>
+
+    <!-- Reviews Grid -->
+    <div id="customerReviewsGrid" class="reviews-grid">
+      <!-- حقن كروت التقييمات برمجياً عبر app.js -->
+    </div>
+  </section>
+
+  <!-- ================= Customizer Modal ================= -->
+  <div id="customizerModal" class="modal-overlay">
+    <div class="customizer-modal-content">
+      <div class="customizer-header">
+        <h2>
+          <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--primary-gold);"></i>
+          <span>مختبر تخصيص البراوني: </span>
+          <span id="customizerBaseTitle" style="color: var(--primary-amber);">كلاسيك فدج</span>
+        </h2>
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <button id="customizerMysteryBtn" class="btn-mystery-sm" title="توليفة عشوائية مبهرة من الشيف">
+            <i class="fa-solid fa-dice"></i> خلطة الشيف (أبهرني ✨)
+          </button>
+          <button id="customizerCloseBtn" class="btn-icon" title="إغلاق">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="customizer-body">
+        <!-- المعاينة المرئية الحية -->
+        <div class="customizer-preview-pane">
+          <div id="brownieVisualPreview">
+            <!-- الرسم التفاعلي المباشر -->
+          </div>
+
+          <div class="preview-price-box">
+            <small>السعر الإجمالي للقطعة/البوكس:</small>
+            <strong id="customizerPrice">24.00 ر.س</strong>
+          </div>
+        </div>
+
+        <!-- خيارات التخصيص والمكونات -->
+        <div class="customizer-options-pane">
+          
+          <!-- 1. تغيير نوع القاعدة -->
+          <div class="cust-group">
+            <h4 class="cust-section-title"><i class="fa-solid fa-cake-candles"></i> 1. نوع قاعدة البراوني</h4>
+            <div id="optBasesList" class="bases-opt-grid"></div>
+          </div>
+
+          <!-- 2. الصلصات الدافئة المذابة -->
+          <div class="cust-group">
+            <h4 class="cust-section-title"><i class="fa-solid fa-droplet"></i> 2. الصلصات الساخنة المذابة (اختر واحدة أو أكثر)</h4>
+            <div id="optSaucesList" class="chips-flex-wrap"></div>
+          </div>
+
+          <!-- 3. المقرمشات والتوبينجز -->
+          <div class="cust-group">
+            <h4 class="cust-section-title"><i class="fa-solid fa-cookie"></i> 3. المقرمشات وقطع الشوكولاتة</h4>
+            <div id="optToppingsList" class="chips-flex-wrap"></div>
+          </div>
+
+          <!-- 4. إضافات التميز والجيلاتو -->
+          <div class="cust-group">
+            <h4 class="cust-section-title"><i class="fa-solid fa-ice-cream"></i> 4. إضافات التميز الحصرية</h4>
+            <div id="optExtrasList" class="luxury-extras-grid"></div>
+          </div>
+
+          <!-- 5. حجم التقديم والبوكسات -->
+          <div class="cust-group">
+            <h4 class="cust-section-title"><i class="fa-solid fa-box-open"></i> 5. حجم التقديم والبوكس</h4>
+            <div id="optSizesList" class="sizes-grid"></div>
+          </div>
+
+          <!-- 6. درجة حرارة التقديم -->
+          <div class="cust-group">
+            <h4 class="cust-section-title"><i class="fa-solid fa-temperature-three-quarters"></i> 6. درجة حرارة التقديم المفضلة</h4>
+            <div id="optHeatList" class="heat-grid"></div>
+          </div>
+
+          <!-- 7. مستوى الحلاوة -->
+          <div class="cust-group">
+            <h4 class="cust-section-title"><i class="fa-solid fa-cubes-stacked"></i> 7. مستوى الحلاوة</h4>
+            <div id="optSweetList" class="sweet-grid"></div>
+          </div>
+
+          <!-- 8. ملاحظات خاصة للشيف -->
+          <div class="cust-group">
+            <h4 class="cust-section-title"><i class="fa-solid fa-pen-fancy"></i> 8. ملاحظات خاصة أو بطاقة إهداء</h4>
+            <textarea id="optSpecialNotes" class="custom-textarea" rows="2" placeholder="اكتب أي رغبة خاصة، مثلاً: زيادة صوص الكراميل، بطاقة إهداء باسم..."></textarea>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="customizer-footer">
+        <button id="customizerSubmitBtn" class="btn-primary">
+          <i class="fa-solid fa-cart-plus"></i> إضافة البراوني المخصص إلى السلة
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= Cart Drawer ================= -->
+  <div id="cartOverlay" class="cart-overlay"></div>
+  <aside id="cartDrawer" class="cart-drawer">
+    <div class="cart-header">
+      <h3><i class="fa-solid fa-basket-shopping" style="color: var(--primary-gold);"></i> سلة المشتريات</h3>
+      <div style="display: flex; align-items: center; gap: 0.8rem;">
+        <button id="clearCartBtn" class="btn-clear-cart" title="إفراغ السلة"><i class="fa-solid fa-trash-can"></i> إفراغ</button>
+        <button id="cartCloseBtn" class="btn-icon"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+    </div>
+
+    <!-- Items List -->
+    <div id="cartItemsList" class="cart-items-list">
+      <!-- حقن أصناف السلة برمجياً -->
+    </div>
+
+    <!-- Cart Footer & Summary -->
+    <div class="cart-footer">
+      <!-- Promo code -->
+      <div class="promo-code-box">
+        <input type="text" id="cartPromoInput" class="promo-input" placeholder="كود الخصم (جرب BROWNIE10)" />
+        <button id="applyPromoBtn" class="btn-apply-promo">تطبيق</button>
+      </div>
+      <div id="cartPromoMsg" class="promo-feedback"></div>
+
+      <div class="cart-summary-rows">
+        <div class="sum-row">
+          <span>المجموع الفرعي:</span>
+          <span id="cartSubtotal">0.00 ر.س</span>
+        </div>
+        <div id="cartDiscountRow" class="sum-row discount" style="display: none;">
+          <span>خصم الكوبون:</span>
+          <span id="cartDiscountAmount">0.00 ر.س</span>
+        </div>
+        <div class="sum-row">
+          <span>رسوم التوصيل:</span>
+          <span id="cartDeliveryFee">15.00 ر.س</span>
+        </div>
+        <div class="sum-row">
+          <span>ضريبة القيمة المضافة (15%):</span>
+          <span id="cartVatAmount">0.00 ر.س</span>
+        </div>
+        <div class="sum-row grand-total">
+          <span>الإجمالي النهائي:</span>
+          <strong id="cartGrandTotal">0.00 ر.س</strong>
+        </div>
+      </div>
+
+      <button id="cartCheckoutBtn" class="btn-checkout-now">
+        <i class="fa-solid fa-credit-card"></i> إتمام الطلب والدفع
+      </button>
+    </div>
+  </aside>
+
+  <!-- ================= Checkout Modal (Pay) ================= -->
+  <div id="checkoutModal" class="modal-overlay">
+    <div class="checkout-modal-content">
+      <div class="customizer-header" style="padding: 0 0 1.2rem; background: none;">
+        <h2><i class="fa-solid fa-shield-halved" style="color: var(--primary-gold);"></i> إتمام الطلب والدفع الآمن</h2>
+        <button id="checkoutCloseBtn" class="btn-icon"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <form id="checkoutForm">
+        <div class="checkout-grid">
+          <!-- تفاصيل العميل والدفع -->
+          <div class="checkout-main-form">
+            
+            <div class="order-type-switch">
+              <label class="radio-pill">
+                <input type="radio" name="orderType" value="delivery" checked />
+                <span><i class="fa-solid fa-motorcycle"></i> توصيل سريع للعنوان</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="orderType" value="pickup" />
+                <span><i class="fa-solid fa-store"></i> استلام من الفرع</span>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label><i class="fa-solid fa-user"></i> الاسم الكريم</label>
+              <input type="text" id="custName" class="form-control" placeholder="مثال: ريان الشمري" required />
+            </div>
+
+            <div class="form-group">
+              <label><i class="fa-solid fa-phone"></i> رقم الجوال للتواصل</label>
+              <input type="tel" id="custPhone" class="form-control" placeholder="05XXXXXXXX" required />
+            </div>
+
+            <div id="deliveryAddressBlock" class="form-group">
+              <label><i class="fa-solid fa-map-location-dot"></i> عنوان التوصيل (داخل الرياض)</label>
+              <input type="text" id="custAddress" class="form-control" placeholder="الرياض - اسم الحي، الشارع، رقم المبنى" />
+              <small style="display: block; margin-top: 0.35rem; color: var(--primary-gold); font-size: 0.75rem;"><i class="fa-solid fa-location-dot"></i> خدمة التوصيل متوفرة لجميع أحياء ومناطق الرياض فقط 🚗</small>
+            </div>
+
+            <div id="storePickupBlock" class="form-group" style="display: none;">
+              <label><i class="fa-solid fa-shop"></i> اختر أقرب فرع للاستلام في الرياض</label>
+              <select id="custBranch" class="form-control">
+                <option value="الرياض - فرع النرجس">الرياض - فرع النرجس (طريق أنس بن مالك)</option>
+                <option value="الرياض - فرع الملقا">الرياض - فرع الملقا (طريق أنس بن مالك)</option>
+                <option value="الرياض - فرع التحلية">الرياض - فرع التحلية (شارع التحلية)</option>
+                <option value="الرياض - فرع الياسمين">الرياض - فرع الياسمين (طريق الملك عبدالعزيز)</option>
+                <option value="الرياض - فرع حطين">الرياض - فرع حطين (بوليفارد سيتي)</option>
+              </select>
+            </div>
+
+            <!-- خيارات موعد التوصيل (فوري أو مجدول) -->
+            <div class="form-group">
+              <label><i class="fa-solid fa-clock"></i> موعد التوصيل المفضل بالرياض</label>
+              <div class="order-type-switch" style="margin-bottom: 0.5rem;">
+                <label class="radio-pill">
+                  <input type="radio" name="timingType" value="now" checked />
+                  <span><i class="fa-solid fa-bolt"></i> توصيل فوري (35-45 د)</span>
+                </label>
+                <label class="radio-pill">
+                  <input type="radio" name="timingType" value="scheduled" />
+                  <span><i class="fa-solid fa-calendar-days"></i> جدولة مسبقة للجمعات</span>
+                </label>
+              </div>
+
+              <!-- حقول اختيار التاريخ والوقت في حال الجدولة -->
+              <div id="scheduledPickerBlock" style="display: none; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 0.5rem;">
+                <div>
+                  <label style="font-size: 0.75rem;">تاريخ التوصيل</label>
+                  <input type="date" id="schedDate" class="form-control" value="2026-08-17" />
+                </div>
+                <div>
+                  <label style="font-size: 0.75rem;">الوقت المفضل</label>
+                  <select id="schedTime" class="form-control">
+                    <option value="04:00 عصراً">04:00 عصراً (فترة الدوامات)</option>
+                    <option value="07:00 مساءً">07:00 مساءً (جمعات المغرب)</option>
+                    <option value="09:30 مساءً">09:30 مساءً (جمعات وسهرة)</option>
+                    <option value="11:30 ليلاً">11:30 ليلاً (سهرة متأخرة)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- باقة الإهداء الفاخرة والشريط -->
+            <div class="gifting-box-card">
+              <label class="gifting-toggle-label">
+                <input type="checkbox" id="isGiftCheckbox" />
+                <span><i class="fa-solid fa-gift" style="color: var(--primary-gold);"></i> هل هذا الطلب إهداء فاخر لشخص عزيز؟ 🎁</span>
+              </label>
+
+              <div id="giftingOptionsFields" style="display: none; margin-top: 1rem;">
+                <label style="font-size: 0.8rem; display: block; margin-bottom: 0.4rem;">اختر لون شريط التغليف الحريري:</label>
+                <div class="ribbons-selector-grid">
+                  <label class="ribbon-opt">
+                    <input type="radio" name="giftRibbon" value="ribbon-gold" checked />
+                    <span>🎗️ ذهبي ملكي</span>
+                  </label>
+                  <label class="ribbon-opt">
+                    <input type="radio" name="giftRibbon" value="ribbon-black" />
+                    <span>🖤 أسود كلاسيكي</span>
+                  </label>
+                  <label class="ribbon-opt">
+                    <input type="radio" name="giftRibbon" value="ribbon-burgundy" />
+                    <span>🍷 برغندي مخملي</span>
+                  </label>
+                </div>
+
+                <div class="form-group" style="margin-top: 0.8rem;">
+                  <label style="font-size: 0.8rem;">اسم المُهدى إليه</label>
+                  <input type="text" id="giftRecipientName" class="form-control" placeholder="مثال: سارة، أبو فهد..." />
+                </div>
+
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label style="font-size: 0.8rem;">نص رسالة الإهداء (تُطبع بكرت فاخر مع الطلب)</label>
+                  <textarea id="giftCardMessage" class="custom-textarea" rows="2" placeholder="ألف مبروك الترقية، جمعة مباركة، بالهناء والعافية..."></textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- طرق الدفع -->
+            <div class="form-group" style="margin-top: 1.5rem;">
+              <label><i class="fa-solid fa-wallet"></i> اختر وسيلة الدفع</label>
+              <div class="payment-methods-grid">
+                <div class="pay-method-chip active" data-method="mada" onclick="window.checkoutManager.selectPaymentMethod('mada')">
+                  <i class="fa-solid fa-credit-card" style="color: #2a9d8f;"></i>
+                  <span>مدى (Mada)</span>
+                </div>
+                <div class="pay-method-chip" data-method="applepay" onclick="window.checkoutManager.selectPaymentMethod('applepay')">
+                  <i class="fa-brands fa-apple" style="color: #fff;"></i>
+                  <span>Apple Pay</span>
+                </div>
+                <div class="pay-method-chip" data-method="visa" onclick="window.checkoutManager.selectPaymentMethod('visa')">
+                  <i class="fa-brands fa-cc-visa" style="color: #f4a261;"></i>
+                  <span>فيزا / ماستركارد</span>
+                </div>
+                <div class="pay-method-chip" data-method="stcpay" onclick="window.checkoutManager.selectPaymentMethod('stcpay')">
+                  <i class="fa-solid fa-mobile-screen" style="color: #9d4edd;"></i>
+                  <span>STC Pay</span>
+                </div>
+                <div class="pay-method-chip" data-method="cod" onclick="window.checkoutManager.selectPaymentMethod('cod')">
+                  <i class="fa-solid fa-hand-holding-dollar" style="color: #e76f51;"></i>
+                  <span>عند الاستلام</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- حقول البطاقة البنكية -->
+            <div id="cardPaymentFields">
+              <div class="form-group">
+                <label>رقم البطاقة</label>
+                <input type="text" id="cardNumInput" class="form-control" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" />
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div class="form-group">
+                  <label>تاريخ الانتهاء</label>
+                  <input type="text" id="cardExpInput" class="form-control" placeholder="MM/YY" maxlength="5" />
+                </div>
+                <div class="form-group">
+                  <label>رمز الأمان (CVV)</label>
+                  <input type="password" id="cardCvvInput" class="form-control" placeholder="•••" maxlength="4" />
+                </div>
+              </div>
+            </div>
+
+            <div id="applePayContainer" style="display: none; margin-bottom: 1.2rem;">
+              <div style="background: #000; color: #fff; padding: 1rem; border-radius: 12px; text-align: center; border: 1px solid #333;">
+                <i class="fa-brands fa-apple" style="font-size: 1.6rem;"></i> الدفع الفوري عبر محفظة Apple Pay
+              </div>
+            </div>
+
+            <div id="stcPayFields" style="display: none; margin-bottom: 1.2rem;">
+              <div class="form-group">
+                <label>رقم الجوال المسجل في STC Pay</label>
+                <input type="tel" class="form-control" placeholder="05XXXXXXXX" />
+              </div>
+            </div>
+
+            <div id="codMessage" style="display: none; margin-bottom: 1.2rem; background: rgba(231, 111, 81, 0.1); border: 1px solid var(--accent-red); padding: 0.8rem; border-radius: 8px; font-size: 0.85rem;">
+              <i class="fa-solid fa-info-circle"></i> يمكنك الدفع نقداً أو عبر جهاز الشبكة عند وصول المندوب لبابك.
+            </div>
+
+            <button type="submit" id="submitPaymentBtn" class="btn-checkout-now" style="margin-top: 1rem;">
+              <i class="fa-solid fa-shield-halved"></i> تأكيد الدفع وإتمام الطلب
+            </button>
+          </div>
+
+          <!-- ملخص الطلب الجانبي -->
+          <div class="checkout-side-summary">
+            <h4 style="margin-bottom: 1rem; color: var(--primary-gold);"><i class="fa-solid fa-list-check"></i> ملخص طلبك</h4>
+            <div id="checkoutSummaryItems"></div>
+            
+            <div class="checkout-total-banner">
+              <span>المبلغ الإجمالي المستحق:</span>
+              <strong id="checkoutPayTotal">0.00 ر.س</strong>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= Order Tracking & Invoice Modal ================= -->
+  <div id="trackingModal" class="modal-overlay">
+    <div class="tracking-modal-content">
+      <div class="customizer-header" style="padding: 0 0 1.2rem; background: none;">
+        <h2><i class="fa-solid fa-route" style="color: var(--primary-gold);"></i> تتبع الطلب المباشر والفاتورة</h2>
+        <div style="display: flex; gap: 0.6rem;">
+          <button id="printInvoiceBtn" class="btn-icon" title="طباعة الفاتورة"><i class="fa-solid fa-print"></i></button>
+          <button id="trackingCloseBtn" class="btn-icon"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      </div>
+
+      <!-- Live Progression Stepper -->
+      <div id="liveOrderSteps" class="tracker-stepper">
+        <!-- يتم تحديثه ومحاكاته تلقائياً عبر checkout.js -->
+      </div>
+
+      <!-- Detailed Printable Invoice -->
+      <div id="orderInvoiceDetails"></div>
+    </div>
+  </div>
+
+  <!-- ================= Business Owner Dashboard Modal ================= -->
+  <div id="adminModal" class="modal-overlay">
+    <div class="admin-modal-content">
+      <div class="admin-header">
+        <div>
+          <h2><i class="fa-solid fa-chart-line"></i> لوحة تحكم مالك Chunk & Cacao</h2>
+          <span style="font-size: 0.85rem; color: var(--text-muted);">إدارة المبيعات، الطلبات الحية بالرياض، وتحديث حالة المطبخ والأسعار</span>
+        </div>
+        <button class="btn-icon" onclick="window.adminDashboard.close()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <!-- Admin Tabs -->
+      <div class="admin-tabs" style="align-items: center;">
+        <button class="admin-tab-btn active" data-tab="orders" onclick="window.adminDashboard.switchTab('orders')">
+          <i class="fa-solid fa-bell"></i> الطلبات الحية والمطبخ
+        </button>
+        <button class="admin-tab-btn" data-tab="kpi" onclick="window.adminDashboard.switchTab('kpi')">
+          <i class="fa-solid fa-coins"></i> المؤشرات والمبيعات
+        </button>
+        <button class="admin-tab-btn" data-tab="menu" onclick="window.adminDashboard.switchTab('menu')">
+          <i class="fa-solid fa-pen-to-square"></i> إدارة القائمة والأسعار
+        </button>
+        <button class="btn-action" style="margin-right: auto; background: rgba(212,175,55,0.15); color: var(--primary-gold); border: 1px solid var(--border-gold); padding: 0.55rem 1rem;" onclick="window.adminDashboard.resetOrders()">
+          <i class="fa-solid fa-arrows-rotate"></i> تحديث وضبط الطلبات
+        </button>
+      </div>
+
+      <!-- Tab 1: Orders -->
+      <div id="adminOrdersTab">
+        <!-- KPI summary banner -->
+        <div class="kpi-cards-grid">
+          <div class="kpi-card">
+            <div class="kpi-icon"><i class="fa-solid fa-sack-dollar"></i></div>
+            <div class="kpi-data">
+              <span>إجمالي المبيعات</span>
+              <strong id="kpiTotalSales">0.00 ر.س</strong>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon" style="color: var(--accent-red); background: rgba(231,111,81,0.15);"><i class="fa-solid fa-fire"></i></div>
+            <div class="kpi-data">
+              <span>طلبات قيد التنفيذ</span>
+              <strong id="kpiActiveOrders">0</strong>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon" style="color: var(--accent-success); background: rgba(42,157,143,0.15);"><i class="fa-solid fa-circle-check"></i></div>
+            <div class="kpi-data">
+              <span>طلبات مكتملة</span>
+              <strong id="kpiCompletedOrders">0</strong>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon"><i class="fa-solid fa-receipt"></i></div>
+            <div class="kpi-data">
+              <span>متوسط قيمة الطلب</span>
+              <strong id="kpiAvgOrder">0.00 ر.س</strong>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="margin-bottom: 1.2rem; font-size: 1.1rem; color: var(--primary-gold);"><i class="fa-solid fa-kitchen-set"></i> شاشة المطبخ والطلبات الواردة</h3>
+        <div id="adminOrdersList" class="admin-orders-grid"></div>
+      </div>
+
+      <!-- Tab 2: KPIs & Analytics -->
+      <div id="adminKpiTab" style="display: none;">
+        <div class="kpi-cards-grid">
+          <div class="kpi-card">
+            <div class="kpi-icon"><i class="fa-solid fa-award"></i></div>
+            <div class="kpi-data">
+              <span>أكثر صوص طلباً</span>
+              <strong>كراميل فرنسي مملح 🍯</strong>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon"><i class="fa-solid fa-heart"></i></div>
+            <div class="kpi-data">
+              <span>أعلى قاعدة تقييماً</span>
+              <strong>كندر بوينو ونوتيلا ⭐</strong>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon"><i class="fa-solid fa-box"></i></div>
+            <div class="kpi-data">
+              <span>أكثر بوكس مبيعاً</span>
+              <strong>بوكس السعادة (4 قطع) 🎁</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 3: Menu Manager -->
+      <div id="adminMenuTab" style="display: none;">
+        <h3 style="margin-bottom: 1.2rem; font-size: 1.1rem; color: var(--primary-gold);"><i class="fa-solid fa-tags"></i> تعديل أسعار وتوفر المنتجات</h3>
+        <div id="adminMenuList"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= PWA Install Banner ================= -->
+  <div id="pwaInstallBanner" class="pwa-install-banner" style="display: none;">
+    <div class="pwa-banner-content">
+      <div class="pwa-app-icon">🍫</div>
+      <div class="pwa-app-text">
+        <strong>تطبيق Chunk & Cacao 📱</strong>
+        <small>ثبّت التطبيق على شاشة جوالك لطلب فوري وسريع</small>
+      </div>
+      <button id="pwaInstallBtn" class="btn-install-app">
+        <i class="fa-solid fa-download"></i> تثبيت
+      </button>
+      <button id="pwaCloseBtn" class="pwa-close-btn">&times;</button>
+    </div>
+  </div>
+
+  <!-- ================= Mobile App Bottom Navigation Bar ================= -->
+  <nav class="mobile-app-bottom-bar">
+    <a href="#home" class="mobile-nav-item active">
+      <i class="fa-solid fa-house"></i>
+      <span>الرئيسية</span>
+    </a>
+    <a href="#menu" class="mobile-nav-item">
+      <i class="fa-solid fa-cookie-bite"></i>
+      <span>القائمة</span>
+    </a>
+    <button class="mobile-nav-item customizer-center-btn" onclick="window.customizer.open('base-fudge')">
+      <div class="center-btn-bubble">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+      </div>
+      <span>تخصيص</span>
+    </button>
+    <a href="javascript:void(0)" class="mobile-nav-item" onclick="window.cartManager.openDrawer()">
+      <div class="mobile-cart-wrap">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span id="mobileCartBadge" class="mobile-badge" style="display: none;">0</span>
+      </div>
+      <span>السلة</span>
+    </a>
+    <a href="#reviews" class="mobile-nav-item">
+      <i class="fa-solid fa-star"></i>
+      <span>التقييمات</span>
+    </a>
+  </nav>
+
+  <!-- ================= AI Chatbot Widget ================= -->
+  <div id="chatWidgetContainer" class="chat-widget-container">
+    <!-- Floating Trigger Button -->
+    <button id="chatWidgetBtn" class="chat-floating-btn" title="تحدث مع مساعد كاكاو الذكي 🍫">
+      <span class="chat-btn-avatar">🍫</span>
+      <span class="chat-btn-label">مساعد كاكاو</span>
+      <span id="chatUnreadBadge" class="chat-unread-dot"></span>
+    </button>
+
+    <!-- Chat Window -->
+    <div id="chatWindow" class="chat-window-box">
+      <!-- Chat Header -->
+      <div class="chat-window-header">
+        <div class="chat-bot-profile">
+          <div class="chat-bot-avatar">🍫</div>
+          <div class="chat-bot-details">
+            <h4>مساعد كاكاو الذكي ✨</h4>
+            <span class="chat-bot-status"><i class="fa-solid fa-circle"></i> متصل لمساعدتك</span>
+          </div>
+        </div>
+        <button id="chatCloseBtn" class="chat-close-btn" title="إغلاق">&times;</button>
+      </div>
+
+      <!-- Messages Area -->
+      <div id="chatMessagesContainer" class="chat-messages-area">
+        <!-- يتم حقن الرسائل برمجياً عبر chatbot.js -->
+      </div>
+
+      <!-- Chat Input Area -->
+      <div class="chat-input-bar">
+        <input type="text" id="chatInput" class="chat-input-field" placeholder="اسألني عن الأصناف، البوكسات، أو التوصيل..." />
+        <button id="chatSendBtn" class="chat-send-btn" title="إرسال">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/customizer.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/checkout.js"></script>
+  <script src="js/admin.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
